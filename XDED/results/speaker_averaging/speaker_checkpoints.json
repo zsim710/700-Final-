@@ -1,0 +1,17 @@
+{
+  "F02": "/mnt/Research/qwan121/ICASSP_SA/val_uncommon_F02_E0D2/7775/save/CKPT+2024-07-11+17-18-17+00/model.ckpt",
+  "F03": "/mnt/Research/qwan121/ICASSP_SA/val_uncommon_F03_E0D3/7775/save/CKPT+2024-07-11+20-46-30+00/model.ckpt",
+  "F04": "/mnt/Research/qwan121/ICASSP_SA/val_uncommon_F04_E0D2/7775/save/CKPT+2024-07-11+17-46-50+00/model.ckpt",
+  "F05": "/mnt/Research/qwan121/ICASSP_SA/val_uncommon_F05_E0D2/7775/save/CKPT+2024-07-11+18-00-45+00/model.ckpt",
+  "M01": "/mnt/Research/qwan121/ICASSP_SA/val_uncommon_M01_E0D4/7775/save/CKPT+2024-07-12+18-29-02+00/model.ckpt",
+  "M04": "/mnt/Research/qwan121/ICASSP_SA/val_uncommon_M04_E0D2/7775/save/CKPT+2024-07-11+18-23-03+00/model.ckpt",
+  "M05": "/mnt/Research/qwan121/ICASSP_SA/val_uncommon_M05_E1D0/7775/save/CKPT+2024-07-12+12-05-28+00/model.ckpt",
+  "M07": "/mnt/Research/qwan121/ICASSP_SA/val_uncommon_M07_E0D0/7775/save/CKPT+2024-07-11+12-24-06+00/model.ckpt",
+  "M08": "/mnt/Research/qwan121/ICASSP_SA/val_uncommon_M08_E0D2/7775/save/CKPT+2024-07-11+19-01-21+00/model.ckpt",
+  "M09": "/mnt/Research/qwan121/ICASSP_SA/val_uncommon_M09_E0D0/7775/save/CKPT+2024-07-11+12-50-57+00/model.ckpt",
+  "M10": "/mnt/Research/qwan121/ICASSP_SA/val_uncommon_M10_E1D0/7775/save/CKPT+2024-07-12+12-56-43+00/model.ckpt",
+  "M11": "/mnt/Research/qwan121/ICASSP_SA/val_uncommon_M11_E0D1/7775/save/CKPT+2024-07-11+16-27-13+00/model.ckpt",
+  "M12": "/mnt/Research/qwan121/ICASSP_SA/val_uncommon_M12_E0D4/7775/save/CKPT+2024-07-12+20-07-46+00/model.ckpt",
+  "M14": "/mnt/Research/qwan121/ICASSP_SA/val_uncommon_M14_E0D0/7775/save/CKPT+2024-07-11+13-41-03+00/model.ckpt",
+  "M16": "/mnt/Research/qwan121/ICASSP_SA/val_uncommon_M16_E0D2/7775/save/CKPT+2024-07-11+20-16-14+00/model.ckpt"
+}

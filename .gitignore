@@ -1,0 +1,63 @@
+# Large model checkpoint files
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.safetensors
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# PyTorch specific
+*.pth.tar
+
+# Large data directories (add specific paths if needed)
+checkpoints/
+results/*/checkpoints/
+**/checkpoints_*/
+**/save/CKPT*/
+
+# Logs
+*.log
+logs/
+wandb/

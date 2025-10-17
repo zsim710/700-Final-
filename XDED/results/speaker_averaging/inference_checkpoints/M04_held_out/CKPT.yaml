@@ -1,0 +1,7 @@
+# yamllint disable
+ACC: 0.6581862946245384
+WER: 100.85959885386819
+WRA: 0.011461318051575931
+end-of-epoch: true
+epoch: 160
+unixtime: 1720687590.6268585

@@ -1,0 +1,80 @@
+# Logit-Level Knowledge Distillation Configuration
+# Pure logit distillation without feature extraction
+
+# Dataset Configuration
+DATASET:
+  NAME: "LogitEnsemble"
+  ROOT: "/home/zsim710/XDED/speechbrain/exp_results/logit_extraction"
+  
+  # All 15 speakers
+  ALL_SPEAKERS: ["F02", "F03", "F04", "F05", "M01", "M04", "M05", "M07", "M08", "M09", "M10", "M11", "M12", "M14", "M16"]
+  
+  # Intelligibility level mapping (from UASpeech documentation)
+  INTELLIGIBILITY_LEVELS:
+    HIGH: ["F02", "F03", "M04", "M07", "M08", "M12", "M14"]     # 7 speakers
+    MID: ["F04", "M05", "M10", "M11"]                           # 4 speakers  
+    LOW: ["F05", "M09", "M16"]                                  # 3 speakers
+    VERY_LOW: ["M01"]                                           # 1 speaker
+  
+  # Leave-one-out test speakers (one per intelligibility level)
+  LEAVE_ONE_OUT_SPEAKERS:
+    HIGH: "M08"        # Hold out M08 from High intelligibility
+    MID: "M05"         # Hold out M05 from Mid intelligibility
+    LOW: "M16"         # Hold out M16 from Low intelligibility
+    VERY_LOW: "M01"    # Hold out M01 from Very Low intelligibility
+
+# Model Configuration
+MODEL:
+  # Student model architecture
+  STUDENT:
+    TYPE: "SimpleMLP"  # Simple MLP that takes logits as input
+    INPUT_DIM: 1000    # Vocabulary size (adjust based on your SA models)
+    HIDDEN_DIMS: [512, 256]
+    OUTPUT_DIM: 1000
+    DROPOUT: 0.1
+  
+  # Teacher ensemble configuration
+  TEACHER:
+    NUM_TEACHERS: 14   # All speakers except the held-out one
+    ENSEMBLE_METHOD: "average"  # Options: "average", "weighted", "attention"
+
+# Training Configuration  
+TRAIN:
+  # Knowledge distillation parameters
+  DISTILLATION:
+    TEMPERATURE: 3.0      # Temperature for softening logits
+    ALPHA: 0.7            # Weight for distillation loss (1-alpha for hard labels if available)
+    LOSS_TYPE: "kl_div"   # KL divergence between student and teacher ensemble
+  
+  # Optimization
+  OPTIMIZER: "Adam"
+  LR: 0.001
+  WEIGHT_DECAY: 0.0001
+  BATCH_SIZE: 32
+  MAX_EPOCHS: 50
+  
+  # Learning rate schedule
+  LR_SCHEDULER:
+    TYPE: "cosine"
+    WARMUP_EPOCHS: 5
+  
+  # Early stopping
+  EARLY_STOP:
+    PATIENCE: 10
+    METRIC: "val_loss"
+
+# Evaluation Configuration
+EVAL:
+  METRICS: ["accuracy", "wer", "cer"]  # Word Error Rate, Character Error Rate
+  DECODE_METHOD: "greedy"  # Greedy decoding from student logits
+
+# Output Configuration
+OUTPUT:
+  DIR: "output/logit_distillation"
+  SAVE_BEST: True
+  SAVE_INTERVAL: 5  # Save every N epochs
+  
+# Logging
+LOG:
+  PRINT_FREQ: 10  # Print every N batches
+  TENSORBOARD: True
